@@ -160,19 +160,19 @@ def profit_stats(sim_profit, calc):
             # Append mean ROI for each buy strategy
             buyStrat_profits.append(meanBuy)
         # Calculate overall mean ROI
-        ROIstat = np.mean(buyStrat_profits)
+        return '{:.2f}'.format(np.mean(buyStrat_profits))
 
     elif (calc == 'max'):
         for buyPerc in sim_profit:
             maxBuy = max(sim_profit[buyPerc])
             buyStrat_profits.append(maxBuy)
-        ROIstat = max(buyStrat_profits)
+        return '{:.2f}'.format(max(buyStrat_profits))
 
     elif (calc == 'min'):
         for buyPerc in sim_profit:
             minBuy = min(sim_profit[buyPerc])
             buyStrat_profits.append(minBuy)
-        ROITstat = min(buyStrat_profits)
+        return min(buyStrat_profits)
 
     return float('{:.2f}'.format(ROIstat))
 
