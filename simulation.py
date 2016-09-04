@@ -172,9 +172,7 @@ def profit_stats(sim_profit, calc):
         for buyPerc in sim_profit:
             minBuy = min(sim_profit[buyPerc])
             buyStrat_profits.append(minBuy)
-        return min(buyStrat_profits)
-
-    return float('{:.2f}'.format(ROIstat))
+        return '{:.2f}'.format(min(buyStrat_profits))
 
 # List of percentile strategy to test
 sim_buyPerc = [75, 80, 85]
