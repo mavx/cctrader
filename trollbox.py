@@ -15,7 +15,8 @@ class PoloniexComponent(ApplicationSession):
             #print("Message received:", args)
             #logging.info('Message received', args)
             #logging.info(args[1:]) # Ignore 'trollboxMessage'
-            logging.info(args[3:]) # Ignore 'trollboxMessage', 'messageid', and 'username'
+            logging.info(args[2:]) # Ignore 'trollboxMessage', and 'messageid'
+            #logging.info(args[3:]) # Ignore 'trollboxMessage', 'messageid', and 'username'
 
         try:
             yield from self.subscribe(onTrollbox, 'trollbox')
