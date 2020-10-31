@@ -184,11 +184,11 @@ buy_mult = [1]
 sell_mult = [1.1]
 mult_dict = {}
 
-print "\nTo cater for XEM's high growth, a multiplier on the calculated target buy/sell price is used:"
-print 'Buy multiplier: %r' % buy_mult
-print 'Sell multiplier: %r \n' % sell_mult
-print 'There will be %d iteration(s)..' % (len(buy_mult) * len(sell_mult))
-print 'Calculating %r x %r = %r combinations..' % (len(sim_buyPerc), len(sim_sellPerc), len(sim_buyPerc)*len(sim_sellPerc))
+print("\nTo cater for XEM's high growth, a multiplier on the calculated target buy/sell price is used:")
+print('Buy multiplier: %r' % buy_mult)
+print('Sell multiplier: %r \n' % sell_mult)
+print('There will be %d iteration(s)..' % (len(buy_mult) * len(sell_mult)))
+print('Calculating %r x %r = %r combinations..' % (len(sim_buyPerc), len(sim_sellPerc), len(sim_buyPerc)*len(sim_sellPerc)))
 
 # Runs simulate function for each percentile strategy combination
 # And inserts profit into sim_profit dictionary
@@ -212,31 +212,31 @@ for b_mult in buy_mult:
             i = i + 1
             progressBar(sim_buyPerc)
 
-#print sim_profit
+#print(sim_profit
 
         # Putting buy vs sell percentile matrix into Pandas Dataframe:
         df3 = pd.DataFrame(data=sim_profit, index=sim_sellPerc)
 
         # Print final summary
-        print '\n'
-        print '===================================================='
-        print 'Profit Summary Matrix'
-        print '===================================================='
-        print 'Multipliers: %r (Buy), %r (Sell)' % (b_mult, s_mult)
-        print 'col headers: buy percentile'
-        print 'row headers: sell percentile'
-        print 'table values: ROI (%)\n'
-        print df3
+        print('\n')
+        print('====================================================')
+        print('Profit Summary Matrix')
+        print('====================================================')
+        print('Multipliers: %r (Buy), %r (Sell)' % (b_mult, s_mult))
+        print('col headers: buy percentile')
+        print('row headers: sell percentile')
+        print('table values: ROI (%)\n')
+        print(df3)
 
         # Print out profit for buy/sell multiplier combo
         mean_ROI = profit_stats(sim_profit, 'mean')
         max_ROI = profit_stats(sim_profit, 'max')
         min_ROI = profit_stats(sim_profit, 'min')
-        print '\n'
-        print 'Max ROI: %r%%' % max_ROI
-        print 'Min ROI: %r%%' % min_ROI
-        print 'Mean ROI: %r%%' % mean_ROI
-        print '----------------------------------------------------\n'
+        print('\n')
+        print('Max ROI: %r%%' % max_ROI)
+        print('Min ROI: %r%%' % min_ROI)
+        print('Mean ROI: %r%%' % mean_ROI)
+        print('----------------------------------------------------\n')
         
 '''
         mult_dict[b_mult].append(m_ROI)
